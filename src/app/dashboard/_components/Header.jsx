@@ -1,5 +1,5 @@
 "use client";
-import ToggleButton from "@/app/Toggle";
+import ToggleButton from "@/app/dashboard/_components/_components/Toggle";
 import { UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import React, { useEffect } from "react";

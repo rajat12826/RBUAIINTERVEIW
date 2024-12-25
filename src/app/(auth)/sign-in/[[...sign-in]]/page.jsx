@@ -1,4 +1,4 @@
-import ToggleButton from "@/app/Toggle";
+import ToggleButton from "@/app/dashboard/_components/_components/Toggle";
 import { SignIn } from "@clerk/nextjs";
 
 export default function Page() {
