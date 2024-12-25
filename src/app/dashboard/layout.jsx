@@ -1,4 +1,4 @@
-import { ThemeProvider } from "next-themes";
+// import { ThemeProvider } from "next-themes";
 import React from "react";
 import Header from "./_components/Header";
 

@@ -1,6 +1,6 @@
-import Image from "next/image";
+// import Image from "next/image";
 import Header from "./dashboard/_components/Header";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function Home() {
