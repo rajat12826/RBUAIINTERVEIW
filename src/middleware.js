@@ -1,6 +1,6 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 
-const isProtectedRoute = createRouteMatcher(["dashboard(.*)",'/sign(.*)', '/forum(.*)','sign-in','sign-up'])
+const isProtectedRoute = createRouteMatcher(["/dashboard(.*)", '/forum(.*)'])
 
 export default clerkMiddleware(async (auth, req) => {
   // Protect the route only at runtime, not during static generation
