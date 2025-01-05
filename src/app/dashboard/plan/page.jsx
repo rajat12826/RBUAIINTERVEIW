@@ -1,4 +1,7 @@
+
+// import { useUser } from '@clerk/nextjs';
 import { CheckIcon } from '@heroicons/react/20/solid'
+import Header from '../_components/Header';
 
 const tiers = [
     {
@@ -41,8 +44,11 @@ function classNames(...classes) {
 }
 
 export default function plan() {
+ 
   return (
-    <div className="relative isolate w-full  bg-white dark:bg-[#2b2a2a] px-6 p-16 sm:py-10 lg:px-8">
+    <div>
+      <Header/>
+      <div className="relative isolate w-full  bg-white dark:bg-[#2b2a2a] px-6 p-16 sm:py-10 lg:px-8">
       <div aria-hidden="true" className="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl">
         <div
           style={{
@@ -138,6 +144,7 @@ export default function plan() {
           </div>
         ))}
       </div>
+    </div>
     </div>
   )
 }

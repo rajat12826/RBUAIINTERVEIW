@@ -1,3 +1,4 @@
+// "use client"
 import { Lightbulb, Volume2 } from "lucide-react";
 import React from "react";
 import { useSpeech } from "react-text-to-speech";
@@ -19,12 +20,12 @@ function QuestionSection({ mockInterviewQuestion, activeQuestionIndex ,setActive
   }
   return (
     mockInterviewQuestion && (
-      <div className=" max-sm:mt-5 my-10  bg-zinc-100  border-2  dark:bg-zinc-800    p-10    rounded-xl  font-product   ">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5" >
+      <div className=" max-sm:mt-5 my-10   bg-zinc-100  border-2  dark:bg-zinc-800  p-10    rounded-xl  font-product   ">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5" >
           {mockInterviewQuestion &&
             mockInterviewQuestion.interviewQuestions.map((ques, index) => {
               return (
-                <div>
+                <div key={index}>
                   <h2
                     className={` p-2 rounded-full border-2  text-xs md:text-sm text-center cursor-pointer  ${
                       activeQuestionIndex == index ? " bg-[#304ffe] text-white dark:bg-blue-800 hover:bg-blue-800 ":" bg-zinc-200 dark:text-zinc-800"

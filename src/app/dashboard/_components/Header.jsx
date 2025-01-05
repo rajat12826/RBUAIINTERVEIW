@@ -2,19 +2,18 @@
 import ToggleButton from "@/app/dashboard/_components/_components/Toggle";
 import { UserButton } from "@clerk/nextjs";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Sidebar } from "./Sidebar";
 
 function Header() {
   const path = usePathname();
-  useEffect(() => {
-    // console.log(path);
-  });
+  
   return (
     <div className="flex justify-between p-5 bg-zinc-100 rounded-b-xl shadow-md dark:bg-zinc-800  ">
       <div className="grid grid-cols-1">
+   <Link href={"/"}>
    <div className="flex">
    <svg fill="#6366f1" className="bg-whit  " width="120px" height="30px" viewBox="0 -64 640 640" xmlns="http://www.w3.org/2000/svg">
 
@@ -30,7 +29,7 @@ function Header() {
 {/* <text x="320" y="50" font-size="24" className="text-blue-500" text-anchor="middle" fill="#4f46e5">Your Text Here</text> */}
 </svg>
 {/* <h1 className=" text-center flex justify-center items-center ">AI-Interviewer</h1> */}
-   </div>
+   </div></Link>
       </div>
 
       <ul className=" hidden sm:flex space-x-3 items-center cursor-pointer">
@@ -46,13 +45,14 @@ function Header() {
             Dashboard
           </li>
         </Link>
-        <li
+       <Link href={"/dashboard/resume"}>
+       <li
           className={`text-center  hover:text-[#304ffe] hover:font-bold hover:dark:text-white hover:shadow-2xl ${
-            path == "/dashboard/interview" && "text-[#304ffe] font-bold"
+            path == "/dashboard/resume" && "text-[#304ffe] font-bold"
           }`}
         >
-          Questions
-        </li>
+         Build Resume
+        </li></Link>
         <Link href={"/dashboard/plan"}>
           <li
             className={`text-center  hover:text-[#304ffe] hover:font-bold hover:dark:text-white hover:shadow-2xl ${

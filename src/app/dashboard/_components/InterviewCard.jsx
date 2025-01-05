@@ -25,22 +25,23 @@ function InterviewCard({ interview }) {
   });
 
   return (
-    <div className="border shadow-sm rounded-lg p-3 dark:bg-white hover:scale-105 transition-transform">
-      <h2 className="font-bold text-blue-800">{interview?.jobposition?.toUpperCase()}</h2>
+    <div className="border shadow-sm rounded-lg p-5 dark:bg-white hover:scale-105 transition-transform">
+      <h2 className="font-bold text-indigo-800">{interview?.jobposition?.toUpperCase()}</h2>
       <h3 className="text-sm text-zinc-500">{interview?.jobExperience} Year(s) of Experience</h3>
-      <p className="text-xs text-zinc-600">
+      <p className="text-xs text-zinc-500 sm:text-sm">
         Created At: {formattedDate} {formattedTime}
       </p>
-      <div className="flex justify-between mt-2 gap-5">
+      <div className="flex justify-between mt-2 gap-5 ">
         <Button
           onClick={() => navigateTo(`/dashboard/interview/${interview?.mockId}/feedback`)}
-          className="w-28 bg-green-600 hover:bg-green-800 dark:text-white font-medium"
+          className="w-20 bg-[#ff1744] hover:bg-[#e60532] dark:text-white font-medium"
         >
           Feedback
         </Button>
         <Button
+       
           onClick={() => navigateTo(`/dashboard/interview/${interview?.mockId}`)}
-          className="w-28 bg-[#2962ff] hover:bg-[#1932c1] dark:text-white font-medium"
+          className="w-20 bg-indigo-600 hover:bg-indigo-500 dark:text-white font-medium"
         >
           Start
         </Button>

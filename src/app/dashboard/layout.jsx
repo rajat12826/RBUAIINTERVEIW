@@ -5,9 +5,9 @@ import Header from "./_components/Header";
 function Dashboardlayout({ children }) {
   return (
     // <ThemeProvider>
-    <div >
-      <Header />
-      <div className="mx-5  md:px-20 lg:mx-36">{children}</div>
+    <div id="np">
+      {/* <Header/> */}
+      <div className="">{children}</div>
     </div>
   );
 }

@@ -5,6 +5,7 @@ import QuestionSection from './_components/QuestionSection';
 import RecordAnswerSection from './_components/RecordAnswerSection';
 
 function StartInterview({params}) {
+  const id=React.use(params).interviewId
     const[interviewData,setinterviewData]=useState();
     const[mockInterviewQuestion,setmockInterviewQuestion]=useState()
     const[activeQuestionIndex,setActiveQuetionIndex]=useState(0)
@@ -14,16 +15,16 @@ function StartInterview({params}) {
     const getInterviewDetails=async()=>{
         const{data,error}=await supabase.from("MockInterview")
         .select()
-        .eq("mockId",params.interviewId)
+        .eq("mockId",id)
         setinterviewData(data[0])
        
         const jsonMockResp=JSON.parse(data[0].jsonMockResp)
         setmockInterviewQuestion(jsonMockResp)
     }
   return (
-    <div className='md:flex w-full '>
-        <div className='flex flex-col   '>
-      <div className='px-10'>
+    <div className='md:flex w-full justify-center    '>
+        <div className=' flex flex-col mx-5 lg:mx-64 '>
+      <div className=''>
       <QuestionSection mockInterviewQuestion={mockInterviewQuestion} activeQuestionIndex={activeQuestionIndex} setActiveQuetionIndex={setActiveQuetionIndex}/>
       </div>
         {/* </div>

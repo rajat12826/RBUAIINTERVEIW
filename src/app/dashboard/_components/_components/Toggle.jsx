@@ -1,5 +1,5 @@
 
-"use client"
+"use client";
 import React, { useEffect } from 'react'
 import { useTheme } from "next-themes";
 import { DarkModeSwitch } from 'react-toggle-dark-mode';

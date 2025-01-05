@@ -43,7 +43,7 @@ const updateUserAnswer=async(btn)=>{
     Question: ${mockInterviewQuestion?.interviewQuestions[activeQuestionIndex]?.question}
     User Answer: ${userAnswer || "No Answer Provided"}
     Context: The user is applying for the position of ${interviewData?.jobposition} with ${interviewData?.jobExperience} years of experience.
-    Task: Evaluate the user's answer very strictly, keeping in mind the high standards for this role. If the answer is missing or insufficient, assign a low rating (e.g., 1-3 out of 10) and provide actionable feedback in JSON format with "rating" and "feedback" fields.
+    Task: Evaluate the user's answer. If the User Answer is sufficient for the role give rating of 5 and little above If the answer is missing or insufficient, assign a low rating (e.g., 1-3 out of 10) and provide actionable feedback in JSON format with "rating" and "feedback" fields.
     Example Format:
     {
       "rating": 0,
@@ -111,7 +111,7 @@ else{
     }, [isListening]); 
 
     return (
-        <div className='w-full mb-10 '>
+        <div className='w-full mb-10  '>
             <div className='flex justify-center my-2 items-center'>
          
             <button class=" rounded-md px-3.5 py-2 m-1 overflow-hidden relative group cursor-pointer border-2 font-semibold border-[#ff1744] text-[#ff1744] text-white" onClick={startStopListening}>

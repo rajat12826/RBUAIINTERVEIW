@@ -3,6 +3,7 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "next-themes";
 import { Toaster } from "sonner";
+import Header from "./dashboard/_components/Header";
 
  
 const geistSans = Geist({
@@ -34,12 +35,14 @@ export default function RootLayout({ children }) {
     <html lang="en" >
       <head>
         {/* Favicon */}
+        <link rel="icon" href="/logo.jpeg" type="image/x-icon" />
       
       </head>
       <body className="font-product dark:bg-[#2b2a2a] antialiased">
         <ThemeProvider attribute="class">
           <ClerkProvider>
           <Toaster />
+          {/* <Header/> */}
             {children}
 
           </ClerkProvider>

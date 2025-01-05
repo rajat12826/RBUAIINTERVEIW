@@ -7,7 +7,8 @@ import React, { useEffect, useState } from 'react'
 
 function Interview({params}) {
     const[interviewData,setinterviewData]=useState();
-    const { interviewId } = params;
+    // const { interviewId } = params;
+    const interviewId=React.use(params).interviewId
     useEffect(()=>{
 getInterviewDetails()
     },[])
@@ -20,13 +21,13 @@ getInterviewDetails()
         
     }
   return (
-    <div className='my-10  cursor-default  flex justify-center flex-col items-center '>
+    <div className='my-10  cursor-default mx-5  md:px-20 lg:mx-36  flex justify-center flex-col items-center '>
         <h2 className='font-bold text-2xl'>Let's Get Started</h2>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-10 my-20'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-10  sm:my-20'>
             <div >
-                <div className='border p-5 rounded-lg flex flex-col my-5 gap-5  dark:bg-[#252729] dark:shadow-white dark:shadow-sm  cursor-default  '> 
+                <div className=' p-5 rounded-lg flex flex-col my-5 gap-5     cursor-default  '> 
                     
-                        <h1 className='font-semibold text-zinc-600 dark:text-zinc-300 '>Job Role/Job Position: <span className='font-medium dark:text-white text-black '>{interviewData &&  interviewData[0]?.jobposition.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())}</span> </h1>
+                        <h1 className='font-semibold text-zinc-600 dark:text-zinc-300 '>Job Role/Job Position: <span className='font-medium dark:text-white text-zinc-800 '>{interviewData &&  interviewData[0]?.jobposition.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())}</span> </h1>
                         <h1 className='font-semibold text-zinc-600 dark:text-zinc-300 fle '>Job Description/Tech Stack: <span className='font-medium dark:text-white text-black '>{interviewData &&  interviewData[0]?.jobDesc.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())}</span> </h1>
                         <h1 className='font-semibold text-zinc-600 dark:text-zinc-300 '>Year Of Experience: <span className='font-medium dark:text-white text-black '>{interviewData &&  interviewData[0]?.jobExperience.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())}</span></h1>
                    

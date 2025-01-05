@@ -8,7 +8,67 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+/* Ensures the content is displayed correctly when printing */
+@media print {
+  /* Hide all content except for the print area */
+  #no-print {
+    display: none !important;
+  }
 
+  #print {
+    display: block !important;   /* Make sure print area is visible */
+    width: 100%;
+    padding: 0;  /* Remove any padding */
+    margin: 0;   /* Remove any margin */
+    box-sizing: border-box;   /* Ensures all content stays inside the boundaries */
+  }
+
+  body {
+    margin: 0;   /* Remove body margins */
+    padding: 0;  /* Remove body padding */
+    box-shadow: none;  /* Remove box-shadow if there's any */
+  }
+
+  /* Remove any extra margins or paddings around the content */
+  /* #resume-preview, #resume-preview * {
+    margin: 0;
+    /* padding: 0; */
+  /* }  */
+
+  /* Add any additional style to format the content properly */
+  #print {
+    font-family: Arial, sans-serif;
+    color: #333;  /* Adjust text color */
+    line-height: 1.5;  /* Set line height */
+  }
+}
+
+/* General page settings */
+@page {
+  size: auto;   /* Automatically adjust page size */
+  margin: 0;     /* Remove page margins */
+}
+
+/* Ensures no extra margins or padding in the print version */
+#resume-preview {
+  margin: 0 !important;
+  /* padding: 0 !important; */
+}
+
+/* Other potential classes that might be adding space */
+
+
+
+
+.rsw-ce ul {
+  list-style: disc;
+  padding-left: 2em;
+}
+
+.rsw-ce ol {
+  list-style: decimal;
+  padding-left: 2em;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;

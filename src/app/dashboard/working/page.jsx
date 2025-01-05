@@ -1,12 +1,22 @@
 import Link from "next/link";
 import React from "react";
+import Header from "../_components/Header";
 
 function Working() {
   return (
-    <div className="sm:p-5 p-2 font-product ">
+   <div>
+    <Header/>
+    <div className="sm:p-5 p-2 font-product mx-5  md:px-20 lg:mx-36 ">
+  
       <div className="my-5">
-        <h1 className="text-center text-3xl font-bold ">How It Works</h1>
-        <h2 className="my-2 text-zinc-700 dark:text-white ">
+        {/* <h1 className="text-center text-3xl font-bold ">How It Works</h1> */}
+        <div className="mx-auto max-w-4xl text-center">
+        {/* <h2 className="text-base/7 font-semibold text-indigo-600">Pricing</h2> */}
+        <p className="mt-2 text-balance text-5xl font-semibold tracking-tight text-gray-900 dark:text-zinc-100 sm:text-6xl">
+          How It Works?
+        </p>
+      </div>
+        <h2 className="my-2 text-center text-zinc-700 dark:text-white ">
           Welcome to RBU Interviewer, your ultimate solution for realistic,
           interactive interview preparation! Our platform uses cutting-edge AI
           to simulate real-life interviews, assess your performance, and provide
@@ -16,7 +26,7 @@ function Working() {
       <div>
         <div>
           <h1> <h3 class="self-stretch text-center text-indigo-600 text-4xl font-extrabold font-manrope leading-normal">1</h3> <h3 className="text-center font-semibold text-2xl">Add an Interview</h3></h1>
-          <h2 className="my-2 px-5 text-zinc-700 dark:text-white">
+          <h2 className="my-2 px-5  text-zinc-700 dark:text-white">
             Start by clicking the “Add Interview” button. This is where you’ll
             set up the framework for your personalized interview session.
           </h2>
@@ -151,6 +161,7 @@ function Working() {
         </div>
       </div>
     </div>
+   </div>
   );
 }
 

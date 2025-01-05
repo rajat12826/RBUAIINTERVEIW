@@ -7,10 +7,10 @@ export default function Home() {
   return (
     <div className="">
       <Header />
-      <div className="grid grid-cols-2 px-10 xl:px-36 pt-20 pb-10">
+      <div className="grid grid-cols-2 px-10 sm:px-12 xl:px-52 pt-20 pb-10">
   <div className="text-3xl font-bold">
-    <h2>All-In-One AI</h2>
-    <h2>Interview Platform</h2>
+    <h2 >All-In-One AI</h2>
+    <h2 >Interview Platform</h2>
   </div>
   <div>
     <h1>
@@ -26,14 +26,19 @@ export default function Home() {
         </span>
         <span className="absolute inset-0 rounded-full border-2 border-indigo-500"></span>
       </button></Link>
-      <button className="group relative inline-flex items-center justify-start overflow-hidden rounded-full px-5 py-3 bg-indigo-500 text-white font-bold">
-        <span className="absolute left-0 top-0 h-32 w-32 -translate-y-2 translate-x-12 rotate-45 bg-white opacity-[3%]"></span>
+      
+   
+     
+     <button className="group relative inline-flex items-center justify-start overflow-hidden rounded-full px-5 py-3 bg-indigo-500 text-white font-bold">
+     <Link href={"/dashboard/plan"} >  <span className="absolute left-0 top-0 h-32 w-32 -translate-y-2 translate-x-12 rotate-45 bg-white opacity-[3%]"></span>
         <span className="absolute left-0 top-0 -mt-1 h-48 w-48 -translate-x-56 -translate-y-24 rotate-45 bg-white opacity-100 transition-all duration-500 ease-in-out group-hover:-translate-x-8"></span>
         <span className="relative w-full text-left  transition-colors duration-200 ease-in-out group-hover:text-indigo-500 text-center text-white ">
-          Explore Features
+      Explore Features 
         </span>
-        <span className="absolute inset-0 rounded-full border-2 border-indigo-500"></span>
+        <span className="absolute inset-0 rounded-full border-2 border-indigo-500"></span>    </Link>
       </button>
+    
+
     </div>
   </div>
 </div>
