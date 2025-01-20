@@ -36,7 +36,7 @@ function Header() {
         <Link href={"/dashboard"}>
           {" "}
           <li
-            className={`text-center  hover:text-[#304ffe] hover:font-bold hover:dark:text-white hover:shadow-2xl ${
+            className={`text-center  hover:text-indigo-500 hover:font-bold hover:dark:text-white hover:shadow-2xl ${
               path == "/dashboard"
                 ? " text-indigo-500 dark:text-indigo-500 font-bold"
                 : ""
@@ -47,15 +47,23 @@ function Header() {
         </Link>
        <Link href={"/dashboard/resume"}>
        <li
-          className={`text-center  hover:text-[#304ffe] hover:font-bold hover:dark:text-white hover:shadow-2xl ${
-            path == "/dashboard/resume" && "text-[#304ffe] font-bold"
+          className={`text-center  hover:text-indigo-500 hover:font-bold hover:dark:text-white hover:shadow-2xl ${
+            path == "/dashboard/resume" && "text-indigo-500 font-bold"
           }`}
         >
          Build Resume
         </li></Link>
+        <Link href={"/dashboard/students"}>
+       <li
+          className={`text-center  hover:text-indigo-500 hover:font-bold hover:dark:text-white hover:shadow-2xl ${
+            path == "/dashboard/students" && "text-indigo-500 font-bold"
+          }`}
+        >
+         Students
+        </li></Link>
         <Link href={"/dashboard/plan"}>
           <li
-            className={`text-center  hover:text-[#304ffe] hover:font-bold hover:dark:text-white hover:shadow-2xl ${
+            className={`text-center  hover:text-indigo-500 hover:font-bold hover:dark:text-white hover:shadow-2xl ${
               path == "/dashboard/plan" &&
               "text-indigo-500 dark:text-indigo-500 font-bold"
             }`}
@@ -65,7 +73,7 @@ function Header() {
         </Link>
         <Link href={"/dashboard/working"}>
         <li
-          className={`text-center  hover:text-[#304ffe] hover:font-bold hover:dark:text-white hover:shadow-2xl ${
+          className={`text-center  hover:text-indigo-500 hover:font-bold hover:dark:text-white hover:shadow-2xl ${
             path == "/dashboard/working" && "text-indigo-500 dark:text-indigo-500 font-bold"
           }`}
         >

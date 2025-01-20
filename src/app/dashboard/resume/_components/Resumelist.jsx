@@ -36,7 +36,7 @@ function Resumelist({resumelist,setResumeList}) {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3  sm:text-xl  md:grid-cols-4  ">
       <Addresume resumelist={resumelist} setResumeList={setResumeList} />
-    {resumelist.map((item, index) => (
+    {resumelist?.map((item, index) => (
       <div className="m-5 " key={index}>
         <Link href={`/dashboard/resume/${item?.resumeid}`}>
           <Button
