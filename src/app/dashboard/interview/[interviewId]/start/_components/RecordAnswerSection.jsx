@@ -41,9 +41,9 @@ const updateUserAnswer=async(btn)=>{
     setloading(true)
     const feeadbackPrompt = `
     Question: ${mockInterviewQuestion?.interviewQuestions[activeQuestionIndex]?.question}
-    User Answer: ${userAnswer || "No Answer Provided"}
+    User Answer: ${ userAnswer || "No Answer Provided"}
     Context: The user is applying for the position of ${interviewData?.jobposition} with ${interviewData?.jobExperience} years of experience.
-    Task: Evaluate the user's answer. If the User Answer is sufficient for the role give rating of 5 and little above If the answer is missing or insufficient, assign a low rating (e.g., 1-3 out of 10) and provide actionable feedback in JSON format with "rating" and "feedback" fields.
+    Task: Evaluate the user's answer that is User Answer . If the answer is sufficient, provide a rating of 5 or higher, indicating the quality and depth of the answer. If the answer lacks sufficient detail or misses critical concepts, provide a lower rating (1-4), with actionable feedback for improvement. and provide actionable feedback in JSON format with "rating" and "feedback" fields.
     Example Format:
     {
       "rating": 0,
