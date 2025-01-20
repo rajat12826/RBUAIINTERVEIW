@@ -232,22 +232,22 @@ export default function page() {
                     </button>
                   </div>
 
-                  {answers && (
+                  {answers[questionKey] && (
                     <div className="mt-2 p-4 bg-gray-100 border border-gray-300 rounded-lg">
                       <h4 className="text-lg font-bold text-black">Answer:</h4>
                       <p className="text-black whitespace-pre-line">
                         
 
-{Object.keys(answers).map((key) => (
+{Object.keys(answers[questionKey]).map((key) => (
   <div key={key} className="mb-8 p-4 border rounded-lg shadow-lg">
     <h2 className="text-2xl font-semibold text-indigo-600 capitalize">{key}</h2>
-    {Object.keys(answers[key]).map((subKey) => (
+    {Object.keys(answers[questionKey][key]).map((subKey) => (
       <div key={subKey} className="mt-4">
         <h3 className="text-lg font-medium text-gray-700 capitalize">{subKey}</h3>
         <pre className="whitespace-pre-wrap bg-gray-100 p-4 rounded-lg border">
-          {typeof answers[key][subKey] === 'object'
-            ? JSON.stringify(answers[key][subKey], null, 2) 
-            : answers[key][subKey]}
+          {typeof answers[questionKey][key][subKey] === 'object'
+            ? JSON.stringify(answers[questionKey][key][subKey], null, 2) 
+            : answers[questionKey][key][subKey]}
         </pre>
       </div>
     ))}
