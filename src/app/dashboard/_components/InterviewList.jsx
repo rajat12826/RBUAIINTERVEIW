@@ -37,18 +37,18 @@ function InterviewList() {
     <div className="my-5 sm:px-10">
     
       {
-        interviewList.length==0?<h2 className="my-2 ml-2 text-xl">
+        interviewList?.length==0?<h2 className="my-2 ml-2 text-xl">
           No Previous Interviews Found :(
         </h2>:null
       }
    <div className=" max-sm:hidden sm:visible grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 my-3">
-  {interviewList.map((interview, index) => (
+  {interviewList?.map((interview, index) => (
     <InterviewCard key={index} interview={interview} />
   ))}
    
 </div>
 <div className={`sm:hidden max-sm:visible ${interviewList?.length==1?" px-10 ":""} flex gap-5 my-3 overflow-x-auto`}>
-  {interviewList.map((interview, index) => (
+  {interviewList?.map((interview, index) => (
     <InterviewCard key={index} interview={interview} />
   ))}
   
