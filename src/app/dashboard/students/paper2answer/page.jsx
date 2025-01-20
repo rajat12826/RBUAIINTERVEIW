@@ -7,95 +7,10 @@ import { Brain, FileText, Lightbulb, MessageCircle } from "lucide-react";
 export default function page() {
   const [file, setFile] = useState(null);
   const [questions, setQuestions] = useState({
-    1: "(a) Compute the reflexive transitive closure (R*) for given R. R = {(a,a), (b,b), (b,c), (c,a), (a,d), (b,d)} 2(CO1)\n(b) Describe the Chomsky Hierarchy along with grammar and accepting device. Also Consider the given grammar. Identify the type, name of grammar, Language the grammar can recognize and the accepting device : Sa u abc | AaB bB u Bb 2+2(CO1)\n(c) Prove the following theorem by principle of mathematical induction : 1+4+7+......+(3n–2) = [n(3n–1)/2 4(CO1)\n(d) Prove the following theorem by principle of mathematical induction that 3 n –1 a multiple of 2. 4(CO1)",
-    2: "(a) Compute the equivalent DFA for the given NFA with ε by first computing NFA without ε . NFA = [{q0, q1, q2, q3}, {a, b, c, ε }, δ , q0,{q3}]\nδ = State a b c ε\nu q0 q2,q3 q2 – q1\nq1 q2 – q3 q2\nq2 – – q2 q3 *\nq3 – – q3 – 7(CO2)\n(b) Convert the given Mealy machine to Moore machine : Present a=0 a=1 state State Output State Output\nu q1 q1 1 q3 1\nq2 q2 1 q1 1\nq3 q2 0 q3 0 3(CO2)\n(c) Construct a DFA for the following on Σ = {a, b}:\n(1) Which accept set of all strings on starting with prefix ab.\n(2) Which accept set of all strings with no more than three a's. Also show the acceptance of valid string as per the DFA constructed. 3(CO2)",
-    3: "(a) Design a CFG for the regular language :\n(1) L = {0 m 1 n 0 m+n | m,n > = , 1}\n(2) L = {a n b m | n!=m} Also show that the designed grammar can derive correct string. 3(CO1)\n(b) State how to identify ambiguous grammars. Also remove left recursion from the following grammar :\nS u aBDh | bGa\nB u Bb | c\nD u EF\nE u g | ε\nF u f | ε\nG u Gb | Gt | a 3(CO1)\n(c) Prove that the language is not regular using Pumping Lemma : L = {a n b n c n | n>=1} 3(CO1)\n(d) Convert given Context Free Grammar to its equivalent Greibach Normal Form(GNF).\nS u AB | b\nA u SB | c\nB u AB | a 4(CO1)",
-    4: "(a) Solve any Two : Design Push Down Automata for the given language. Also show string acceptance for each language. Consider any valid string of length greater than 5.\n(1) L = {a n b 2n | n>=1}\n(2) L = {(a, b)* | number of a > number of b}\n(3) L = {a 2n c b n | n>=1} 5(CO3)\n(b) Convert the given Push Down Automata to Context Free Grammar (CFG).\nM=({q0,q1},{0,1},{Z0,X}, δ , q0, Z0, Φ } where δ is given below :\nδ {q0,1,Z0) u {(q0,XZ0)}\nδ (q0,1,X) u {(q0,XX)}\nδ (q0,0,X) u {(q1,X)}\nδ (q0, ε ,Z0) u {(q0, ε )}\nδ (q1,1,X) u {(q1, ε )}\nδ (q1,0,Z0) u {(q0,Z0)} Also find the reduced grammar. 5(CO3)",
-    5: '(a) Design a Turing machine for the regular expression: aba*ba. Show that the string "abab" is valid. 3(CO3)\n(b) Design a Turing machine to perform the function f(x,y) = x*y. 4(CO3)\n(c) Design a Turing machine that performs mod operation as follows : n mod 5. 4(CO3)\n(d) Write short note on Halting Problem of Turning Machine. 3(CO3)',
-    6: "(a) Explain Ackerman function and find : A[2,2] 3(CO4)\n(b) Infer whether the following functions are primitive recursive or not(any Two ).\n(1) f(x, y) = x*y\n(2) f(x, y) = xy\n(3) f(x, y) = m 2n 4(CO4)\n(c) Apply the post correspondence problem to find the solution for the given lists.\n(1) A = {001, 0011, 11, 101} B = {01, 111, 111, 010}\n(2) A = {0, 01000, 01} B = {000, 01, 1} 3(CO4)",
+   
   });
   const [answers, setAnswers] = useState( {
-    "a": {
-      "NFA_without_epsilon": {
-        "states": ["q0", "q1", "q2", "q3"],
-        "alphabet": ["a", "b", "c"],
-        "transition_function": {
-          "q0": {"a": ["q2", "q3"], "b": ["q2"], "c": []},
-          "q1": {"a": ["q2"], "b": [], "c": ["q2", "q3"]},
-          "q2": {"a": [], "b": [], "c": ["q3"]},
-          "q3": {"a": [], "b": [], "c": []}
-        },
-        "start_state": "q0",
-        "accept_states": ["q3"]
-      },
-      "equivalent_DFA": {
-        "states": ["A", "B", "C", "D"],
-        "alphabet": ["a", "b", "c"],
-        "transition_function": {
-          "A": {"a": "B", "b": "C", "c": "D"},
-          "B": {"a": "B", "b": "C", "c": "D"},
-          "C": {"a": "B", "b": "C", "c": "D"},
-          "D": {"a": "B", "b": "C", "c": "D"}
-        },
-        "start_state": "A",
-        "accept_states": ["B", "D"]
-      }
-    },
-    "b": {
-      "Mealy_machine": {
-        "states": ["q1", "q2", "q3"],
-        "alphabet": ["0", "1"],
-        "transition_function": {
-          "q1": {"0": {"next_state": "q1", "output": "1"}, "1": {"next_state": "q3", "output": "1"}},
-          "q2": {"0": {"next_state": "q2", "output": "1"}, "1": {"next_state": "q1", "output": "1"}},
-          "q3": {"0": {"next_state": "q2", "output": "0"}, "1": {"next_state": "q3", "output": "0"}}
-        },
-        "start_state": "q1"
-      },
-      "equivalent_Moore_machine": {
-        "states": ["q1", "q2", "q3", "q4", "q5"],
-        "alphabet": ["0", "1"],
-        "transition_function": {
-          "q1": {"0": "q1", "1": "q4"},
-          "q2": {"0": "q2", "1": "q5"},
-          "q3": {"0": "q3", "1": "q3"},
-          "q4": {"0": "q4", "1": "q5"},
-          "q5": {"0": "q2", "1": "q5"}
-        },
-        "output_function": {
-          "q1": "1", "q2": "1", "q3": "0", "q4": "1", "q5": "0"
-        },
-        "start_state": "q1"
-      }
-    },
-    "c": {
-      "DFA_prefix_ab": {
-        "states": ["q0", "q1", "q2", "q3"],
-        "alphabet": ["a", "b"],
-        "transition_function": {
-          "q0": {"a": "q1", "b": "q0"},
-          "q1": {"a": "q1", "b": "q2"},
-          "q2": {"a": "q3", "b": "q3"},
-          "q3": {"a": "q3", "b": "q3"}
-        },
-        "start_state": "q0",
-        "accept_states": ["q2", "q3"]
-      },
-      "DFA_no_more_than_three_a": {
-        "states": ["q0", "q1", "q2", "q3", "q4"],
-        "alphabet": ["a", "b"],
-        "transition_function": {
-          "q0": {"a": "q1", "b": "q0"},
-          "q1": {"a": "q2", "b": "q0"},
-          "q2": {"a": "q3", "b": "q0"},
-          "q3": {"a": "q4", "b": "q0"},
-          "q4": {"a": "q4", "b": "q4"}
-        },
-        "start_state": "q0",
-        "accept_states": ["q0", "q1", "q2", "q3"],
-        "acceptance_example": ["abab", "abba", "bbb", "aabb"]
-      }
-    }
+    
   });
   const [error, setError] = useState("");
   const [pdfText, setPdfText] = useState("");
